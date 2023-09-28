@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
+             xmlns:local="clr-namespace:Grouping"
+             x:Class="Grouping.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:DataFormViewModel/>
+    </ContentPage.BindingContext>
+    <Grid Padding="0,5,0,5" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Text="Contact Form" HeightRequest="50" Background="#6200EE" 
+               FontFamily="Roboto" FontSize="18" 
+               FontAttributes="Bold" 
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               Padding="0,5,0,5" TextColor="White"/>
+
+        <Image Source="people_circle16.png" Margin="20" Grid.Row="1" HeightRequest="80"/>
+
+        <dataForm:SfDataForm x:Name="dataForm" HeightRequest="550" Grid.Row="2"  
+                             DataObject="{Binding GroupingModel}" Padding="2,5"
+                             GenerateDataFormItem="dataForm_GenerateDataFormItem">
+            <dataForm:SfDataForm.DefaultLayoutSettings>
+                <dataForm:DataFormDefaultLayoutSettings LabelPosition="Top"/>
+            </dataForm:SfDataForm.DefaultLayoutSettings>
+        </dataForm:SfDataForm>
+        <Button Text="Save" Grid.Row="3" x:Name="saveButton" Background="#6200EE" TextColor="White"
+                            HeightRequest="40" VerticalOptions="Center" FontSize="16"
+                            CornerRadius="5" WidthRequest="200"
+                            HorizontalOptions="Center" />
+
+    </Grid>
+</ContentPage>
+
+
