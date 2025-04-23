@@ -23,7 +23,7 @@ public partial class MainPage : ContentPage
 		{
 			if(e.DataFormGroupItem.Name=="Name")
 			{
-				e.DataFormGroupItem.HeaderBackground = Color.FromHex("#D7DDED");
+				e.DataFormGroupItem.HeaderBackground = Color.FromArgb("#D7DDED");
 				e.DataFormGroupItem.HeaderTextStyle = new DataFormTextStyle
 				{
 					FontSize=16,
